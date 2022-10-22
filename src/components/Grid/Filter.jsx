@@ -1,21 +1,25 @@
 import React, { useState } from 'react'
 
+/* City names */
 const cityName = ["New Delhi", "Ghaziabad", "Greater Noida", "Noida", "Delhi"]
 
+/* Filter Component */
 function Filter(props) {
   const [city, setCity] = useState('Select City');
   const [show, setShow] = useState(false)
 
-
+  /* handlCity triggers when city selected */
   const handleCity = (item) => {
     setCity(item)
     props.setCity(item)
     setShow(!show)
   }
+  /* Return */
   return (
     <div className='filter'>
       <div className='row'>
         <span>Filters</span>
+        {/* onClick trigger handleReset from props */}
         {props.city ? <button onClick={props.handleReset}>Reset</button> : null}
       </div>
       <span>Location</span>
@@ -38,6 +42,7 @@ function Filter(props) {
           <div className='cityName'>
             {cityName.map((item, index) => {
               return (
+                /* onClick triggers handleCity */
                 <span onClick={() => handleCity(item)} key={`city-${index}`}>{item}</span>
               )
             })}

@@ -1,5 +1,7 @@
+/* Imports */
 import React from 'react'
 
+/* Facility Conmponent */
 function Facility() {
   return (
     <div className='facilty'>

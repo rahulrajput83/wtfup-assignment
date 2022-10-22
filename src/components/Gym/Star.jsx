@@ -1,5 +1,7 @@
+/* Imports */
 import React from 'react'
 
+/* Star Component */
 function Star() {
     return (
         <div className='star'>

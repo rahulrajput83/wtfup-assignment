@@ -1,5 +1,7 @@
+/* Imports */
 import React from 'react'
 
+/* Plan component with props */
 function Plan(props) {
   return (
     <div className='plan'>
