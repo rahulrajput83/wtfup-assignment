@@ -33,11 +33,11 @@ function Gym(props) {
             })
                 .then(res => res.json())
                 .then((res) => {
-                    if(res.data) {
+                    if (res.data) {
                         /* Set value to plan useState */
                         setPlan(res.data)
                     }
-                    
+
                 })
                 .catch((err) => {
                     console.log(err)
@@ -50,7 +50,7 @@ function Gym(props) {
             <Link to='/' className='back'>
                 <i className='fa fa-angle-left'></i>
                 <span>Back</span>
-                </Link>
+            </Link>
             <div className='title'>
                 {/* Set value from props */}
                 {filtered ? <h2>{filtered.gym_name
@@ -78,15 +78,16 @@ function Gym(props) {
                     {/* Renders WhyChoose component  */}
                     {filtered ? <WhyChoose /> : null}
                 </div>
-                <div className='right'>
-                    <span>Choose Membership</span>
-                    {(plan !== []) || (plan !== undefined) ? plan.map((e, index) => {
-                        return (
-                            /* Rendwers Plan component with props */
-                            <Plan plan={e} index={index} key={`plan-${index}`} />
-                        )
-                    }) : null}
-                </div>
+                {(plan !== []) || (plan !== undefined) ?
+                    <div className='right'>
+                        <span>Choose Membership</span>
+                        {(plan !== []) || (plan !== undefined) ? plan.map((e, index) => {
+                            return (
+                                /* Rendwers Plan component with props */
+                                <Plan plan={e} index={index} key={`plan-${index}`} />
+                            )
+                        }) : null}
+                    </div> : null}
             </div>
         </div>
     )
