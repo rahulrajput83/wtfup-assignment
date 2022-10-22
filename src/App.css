@@ -1,0 +1,241 @@
+body {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputBar {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.6rem;
+  border: 0.15rem solid white;
+}
+
+.inputBar i{
+  font-size: 1.2rem;
+  color: gray;
+  margin-right: 0.6rem;
+}
+
+.inputBar input {
+  width: 80vw;
+  color: white;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.inputBar input::placeholder{
+  color: gray;
+}
+
+.inputBar .fa-map-marker {
+  cursor: pointer;
+  color: white;
+  background: #920909;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+}
+
+.inputBar .fa-map-marker:hover, .inputBar button:hover {
+  opacity: 0.7;
+}
+
+.inputBar button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: #920909;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+.content {
+  margin-top: 3rem;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.filter {
+  width: 30%;
+  display: flex;
+  flex-direction: column;;
+}
+
+.filter .row {
+  display: flex;
+  justify-content: space-between;
+}
+.filter .row span{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.filter .row button {
+  border: none;
+  background: #920909;
+  color: white;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.filter > span {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.filter .cities {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.filter .location, .filter .cities .inputCity {
+  width: 90%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 0.15rem solid gray;
+  border-radius: 0.3rem;
+  gap: 1rem;
+  background: rgb(26, 25, 25);
+}
+
+.filter .location i, .filter .cities .inputCity {
+  font-size: 1rem;
+  color: gray;
+}
+
+.filter .location input, .filter .cities .inputCity .input {
+  outline: none;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0.2rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.filter .price {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.filter .price input {
+  background: rgb(26, 25, 25);
+  width: 15%;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+  border: 0.15rem solid gray;
+  border-radius: 0.3rem;
+}
+
+.filter .location input, .filter .cities .inputCity .input span, .filter .price input::placeholder {
+  font-weight: 600;
+}
+
+.filter .cities .inputCity {
+  cursor: pointer;
+}
+
+.filter .cities {
+  position: relative;
+}
+
+.filter .cities .cityName {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem 0;
+  border-radius: 0.3rem;
+  top: 4.3rem;
+  left: 0;
+  background: rgb(26, 25, 25)
+}
+
+.filter .cities .cityName span {
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.filter .cities .cityName span:hover {
+  background: rgb(49, 49, 49);
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+@media(max-width: 768px) {
+  body {
+    width: 100%;
+  }
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  .content {
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .filter {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .inputBar {
+    margin-left: auto;
+    width: fit-content;
+  }
+  .inputBar input {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  .data {
+    width: 100%;
+  }
+  
+}

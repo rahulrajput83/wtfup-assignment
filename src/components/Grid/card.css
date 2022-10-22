@@ -1,0 +1,114 @@
+.card {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    height: 16rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #232323, #131313 70%);
+    border-radius: 0.6rem;
+    text-align: left;
+    text-decoration: none;
+}
+
+.card .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+.card .details .row {
+    width: 90%;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .details .row h3 {
+    color: white;
+    margin-bottom: 0;
+}
+
+.card .details .row .star {
+    width: auto;
+    display: flex;
+    color: white;
+    column-gap: 0.5rem;
+}
+.card .details .row .star i{
+    font-size: 0.8rem;
+}
+
+.card .details .address {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    width: fit-content;
+}
+
+.card .details .location {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.card .details .location i {
+    color:  green;
+    font-size: 1rem;
+}
+
+.card .details .bottom {
+    margin-top: auto;
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.card .details .bottom span {
+    color: #E2B411;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card .details .bottom button {
+    border: none;
+    padding: 0.8rem 1.5rem;
+    background: #920909;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+
+@media(max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+    .card .details {
+        width: 100%;
+        padding: 0.6rem;
+    }
+    .card .details .bottom button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    .card .details .row{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card .details .location{
+        gap: 0.2;
+    }
+    .card .details .row .star{
+        margin-left: auto;
+    }
+    .card .details .bottom{
+        margin-top: 1rem;
+    }
+}
