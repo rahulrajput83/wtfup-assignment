@@ -16,7 +16,7 @@ function Filter(props) {
     <div className='filter'>
       <div className='row'>
         <span>Filters</span>
-        {props.city ? <button onClick={() => props.setCity('')}>Reset</button> : null}
+        {props.city ? <button onClick={props.handleReset}>Reset</button> : null}
       </div>
       <span>Location</span>
       <div className='location'>

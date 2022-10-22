@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Facility from './Facility';
 import './gym.css';
 import Plan from './Plan';
@@ -29,8 +29,10 @@ function Gym(props) {
             })
                 .then(res => res.json())
                 .then((res) => {
-                    console.log(res.data)
-                    setPlan(res.data)
+                    if(res.data) {
+                        setPlan(res.data)
+                    }
+                    
                 })
                 .catch((err) => {
                     console.log(err)
@@ -39,7 +41,10 @@ function Gym(props) {
     }, [filtered, id])
     return (
         <div className='gym'>
-            <button className='back'>Back</button>
+            <Link to='/' className='back'>
+                <i className='fa fa-angle-left'></i>
+                <span>Back</span>
+                </Link>
             <div className='title'>
                 {filtered ? <h2>{filtered.gym_name
                 }</h2> : null}
@@ -64,7 +69,7 @@ function Gym(props) {
                 </div>
                 <div className='right'>
                     <span>Choose Membership</span>
-                    {plan.length > 0 ? plan.map((e, index) => {
+                    {(plan !== []) || (plan !== undefined) ? plan.map((e, index) => {
                         return (
                             <Plan plan={e} index={index} key={`plan-${index}`} />
                         )

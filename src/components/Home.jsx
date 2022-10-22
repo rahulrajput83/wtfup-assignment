@@ -46,6 +46,7 @@ function Home(props) {
     props.setArr(data.data);
   }, [data, props])
 
+
   useEffect(() => {
     if (location.latitude !== 0) {
       setUrl(`https://devapi.wtfup.me/gym/nearestgym?lat=${location.latitude}&long=${location.longitude}`)
@@ -61,12 +62,16 @@ function Home(props) {
     }
   }, [city, url, location, fetchData])
 
+  const handleReset = () => {
+    setCity('');
+    setUrl(`https://devapi.wtfup.me/gym/nearestgym?lat=${location.latitude}&long=${location.longitude}`)
+  }
   return (
     <div className='container'>
 
       <Input getLocation={getLocation} />
       <div className='content'>
-        <Filter city={city} setCity={setCity} />
+        <Filter handleReset={handleReset} city={city} setCity={setCity} />
         <div className='data'>
           {data.hasOwnProperty('data') ?
 
